@@ -21,6 +21,7 @@ radius = 2.0
 
 [node name="Body" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 2
 script = ExtResource("1_uj41i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
@@ -51,6 +52,8 @@ transform = Transform3D(0.999993, 0, 0, 0, 0.999985, 0, 0, 0, 0.999991, -0.08483
 script = ExtResource("4_s7eew")
 
 [node name="PickupRange" type="Area3D" parent="Body/Item"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Item/PickupRange"]
 shape = SubResource("CylinderShape3D_gn41i")

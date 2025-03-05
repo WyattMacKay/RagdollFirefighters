@@ -1,5 +1,4 @@
-extends Node
-
+extends StaticBody3D
 class_name Item
 
 enum HOLD_TYPE {
@@ -9,11 +8,12 @@ enum HOLD_TYPE {
 }
 
 @export var model := "res://placeholder-models/ball.tscn"
-
+@export var mesh := "res://placeholder-models/ball.tscn"
 
 var node: Node
 
 func _ready() -> void:
+	$Mesh.mesh = load(mesh)
 	var model_scene := load(model)
 	if model_scene:
 		node = model_scene.instantiate()
