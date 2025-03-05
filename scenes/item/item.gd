@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends RigidBody3D
 class_name Item
 
 enum HOLD_TYPE {
@@ -7,17 +7,12 @@ enum HOLD_TYPE {
 	CENTER,
 }
 
-@export var model := "res://placeholder-models/ball.tscn"
-@export var mesh := "res://placeholder-models/ball.tscn"
+@export var mesh := "res://placeholder-models/ball.tres"
 
 var node: Node
 
 func _ready() -> void:
 	$Mesh.mesh = load(mesh)
-	var model_scene := load(model)
-	if model_scene:
-		node = model_scene.instantiate()
-		self.add_child(node)
 
 func use() -> void:
 	push_error("Child classes must overwrite the use() function.")

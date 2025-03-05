@@ -24,8 +24,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		spring_arm.spring_length -= 1
 	if event.is_action_pressed("wheel_down") and spring_arm.spring_length < max_length:
 		spring_arm.spring_length += 1
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
