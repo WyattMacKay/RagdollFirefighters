@@ -18,6 +18,9 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	direction = direction.rotated(Vector3.UP, %Camera.global_rotation.y)
+	
+	rotate_player(direction)
+	
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -26,3 +29,6 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func rotate_player(direction: Vector3) -> void:
+	pass

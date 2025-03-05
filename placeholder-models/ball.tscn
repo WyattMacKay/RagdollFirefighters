@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7jfna6o3e0hg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ckpnf"]
+radius = 1.0
+height = 2.0
+radial_segments = 16
+rings = 8
+
+[node name="Ball" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ckpnf")

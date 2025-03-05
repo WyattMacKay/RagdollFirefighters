@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var item_scene := "res://weapon/weapon.tscn"
+@export var item_scene := "res://scenes/item/item.tscn"
 
 var scene := load(item_scene)
 var item: Node = scene.instantiate()
