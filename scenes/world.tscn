@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dlxqgi0jmuij"]
 
-[ext_resource type="PackedScene" uid="uid://c57li0hj5reys" path="res://scenes/player/player.tscn" id="1_o6fvy"]
-[ext_resource type="Texture2D" uid="uid://by21nx68ulo2c" path="res://assets/floortext.png" id="1_vkcj5"]
-[ext_resource type="PackedScene" uid="uid://bst3hss4dliwr" path="res://scenes/item/item.tscn" id="3_ic8uk"]
+[ext_resource type="Texture2D" uid="uid://by21nx68ulo2c" path="res://assets/floortext.png" id="1_74p1c"]
+[ext_resource type="PackedScene" uid="uid://c57li0hj5reys" path="res://scenes/player/player.tscn" id="2_jga3r"]
+[ext_resource type="PackedScene" uid="uid://bst3hss4dliwr" path="res://scenes/item/item.tscn" id="3_qlr1k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q7uo2"]
 sky_top_color = Color(0.604049, 0.827954, 0.985804, 1)
@@ -22,7 +22,7 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbmor"]
 albedo_color = Color(0.428704, 0.424969, 0.441437, 1)
-albedo_texture = ExtResource("1_vkcj5")
+albedo_texture = ExtResource("1_74p1c")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0lvx4"]
@@ -46,7 +46,7 @@ skeleton = NodePath("../CollisionShape3D")
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 48, 0)
 
-[node name="Player" parent="." instance=ExtResource("1_o6fvy")]
+[node name="Player" parent="." instance=ExtResource("2_jga3r")]
 
-[node name="Item" parent="." instance=ExtResource("3_ic8uk")]
+[node name="Item" parent="." instance=ExtResource("3_qlr1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78802, 1.03481, 0)

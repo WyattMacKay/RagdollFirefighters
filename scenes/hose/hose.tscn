@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://co68ri24efkct"]
+
+[node name="Hose" type="Node"]
+
+[node name="Node3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]

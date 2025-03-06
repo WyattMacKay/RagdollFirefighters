@@ -6,7 +6,9 @@ extends Node3D
 
 @onready var spring_arm := $SpringArm3D
 
-# Called when the node enters the scene tree for the first time.
+func _process(_delta: float) -> void:
+	position = get_parent().position
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
