@@ -54,3 +54,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78802, 1.03481, 0)
 
 [node name="Hose" parent="." instance=ExtResource("4_fiq4w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 6)
+num_segments = 8
