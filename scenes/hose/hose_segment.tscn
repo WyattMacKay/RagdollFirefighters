@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://1xi8walw4260"]
+
+[ext_resource type="Script" path="res://scenes/hose/hose_segment.gd" id="1_sfkon"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_k13m6"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 1.0
+radial_segments = 12
+rings = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4blh1"]
+points = PackedVector3Array(-0.2, -0.5, 0, -0.173218, -0.5, -0.1, -0.173218, -0.5, 0.0999608, -0.2, 0.5, 0, -0.173218, 0.5, -0.1, -0.1, -0.5, -0.173218, -0.1, -0.5, 0.173179, -0.173218, 0.5, 0.0999608, -0.1, 0.5, -0.173218, 0, -0.5, -0.2, 0, -0.5, 0.2, -0.1, 0.5, 0.173179, 0, 0.5, -0.2, 0.1, -0.5, -0.173218, 0.1, -0.5, 0.173179, 0, 0.5, 0.2, 0.1, 0.5, -0.173218, 0.173179, -0.5, -0.100039, 0.173179, -0.5, 0.1, 0.1, 0.5, 0.173179, 0.173179, 0.5, -0.100039, 0.2, -0.5, 0, 0.173179, 0.5, 0.1, 0.2, 0.5, 0)
+
+[node name="Hose Segment" type="Node3D"]
+script = ExtResource("1_sfkon")
+metadata/_edit_lock_ = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("CylinderMesh_k13m6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4blh1")
+
+[node name="Top Connector" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+gizmo_extents = 0.52

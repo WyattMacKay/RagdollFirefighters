@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://by21nx68ulo2c" path="res://assets/floortext.png" id="1_74p1c"]
 [ext_resource type="PackedScene" uid="uid://c57li0hj5reys" path="res://scenes/player/player.tscn" id="2_jga3r"]
 [ext_resource type="PackedScene" uid="uid://bst3hss4dliwr" path="res://scenes/item/item.tscn" id="3_qlr1k"]
-[ext_resource type="PackedScene" uid="uid://d2t3komdp66wy" path="res://scenes/hose/hose.tscn" id="4_fiq4w"]
+[ext_resource type="PackedScene" uid="uid://c4xs0jf54ibmr" path="res://scenes/hose/hose.tscn" id="4_fiq4w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q7uo2"]
 sky_top_color = Color(0.604049, 0.827954, 0.985804, 1)
@@ -47,10 +47,10 @@ skeleton = NodePath("../CollisionShape3D")
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 48, 0)
 
+[node name="Player" parent="." instance=ExtResource("2_jga3r")]
+
 [node name="Item" parent="." instance=ExtResource("3_qlr1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78802, 1.03481, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_jga3r")]
-
 [node name="Hose" parent="." instance=ExtResource("4_fiq4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.084, -10.0459)
