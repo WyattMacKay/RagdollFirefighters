@@ -5,6 +5,7 @@ var holding := false
 var old_parent: Node
 
 func pick_up(new_item: Item):
+	print("Fuck!")
 	item = new_item
 	old_parent = item.get_parent()
 	item.reparent(self)
@@ -28,6 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		var bodies: Array[Node3D] = $PickupRange.get_overlapping_bodies()
 		for body in bodies:
+			print(body.name)
 			if body is Item:
 				pick_up(body as Item)
 	
