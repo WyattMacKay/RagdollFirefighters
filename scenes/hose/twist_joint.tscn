@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d0i3q6dhx44l5"]
+
+[node name="TwistJoint" type="ConeTwistJoint3D"]
+swing_span = 0.349066
+twist_span = 1.39626

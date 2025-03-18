@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlxqgi0jmuij"]
+
+[ext_resource type="PackedScene" uid="uid://c57li0hj5reys" path="res://scenes/player/player.tscn" id="1_o6fvy"]
+[ext_resource type="Texture2D" uid="uid://by21nx68ulo2c" path="res://assets/floortext.png" id="1_vkcj5"]
+[ext_resource type="PackedScene" uid="uid://bst3hss4dliwr" path="res://scenes/item/item.tscn" id="3_ic8uk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q7uo2"]
+sky_top_color = Color(0.604049, 0.827954, 0.985804, 1)
+sky_horizon_color = Color(0.701012, 0.749238, 0.779701, 1)
+ground_horizon_color = Color(0.701012, 0.749238, 0.779701, 1)
+
+[sub_resource type="Sky" id="Sky_023lw"]
+sky_material = SubResource("ProceduralSkyMaterial_q7uo2")
+
+[sub_resource type="Environment" id="Environment_2s876"]
+background_mode = 2
+sky = SubResource("Sky_023lw")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3u61t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbmor"]
+albedo_color = Color(0.428704, 0.424969, 0.441437, 1)
+albedo_texture = ExtResource("1_vkcj5")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0lvx4"]
+material = SubResource("StandardMaterial3D_xbmor")
+size = Vector2(100, 100)
+
+[node name="World" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2s876")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape3D_3u61t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_0lvx4")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 48, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_o6fvy")]
+
+[node name="Item" parent="." instance=ExtResource("3_ic8uk")]

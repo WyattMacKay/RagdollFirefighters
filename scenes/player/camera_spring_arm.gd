@@ -6,7 +6,9 @@ extends Node3D
 
 @onready var spring_arm := $SpringArm3D
 
-# Called when the node enters the scene tree for the first time.
+func _process(_delta: float) -> void:
+	position = get_parent().position
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -24,8 +26,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		spring_arm.spring_length -= 1
 	if event.is_action_pressed("wheel_down") and spring_arm.spring_length < max_length:
 		spring_arm.spring_length += 1
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
